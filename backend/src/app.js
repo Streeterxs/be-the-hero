@@ -11,4 +11,4 @@ app.use(routes);
 app.use(errors());
 
 console.log('Servidor iniciando...');
-app.listen(3333);
+module.exports = app;
