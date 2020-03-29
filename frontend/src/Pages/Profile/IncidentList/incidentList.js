@@ -4,11 +4,11 @@ import Incident from './Incident';
 
 import './incidentList.css'
 
-const incidentList = () => (
+const incidentList = ({incidents}) => (
     <ul className="incidentList">
-        <Incident/>
-        <Incident/>
-        <Incident/>
+        {
+            incidents.map((incident, index) => (<Incident key={index} incident={incident}/>))
+        }
     </ul>
 );
 

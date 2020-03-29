@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import './logonForm.css'
 
-const logonForm = () => {
+const logonForm = ({formSubmit, changeId}) => {
     return (
-        <form className="logonForm">
+        <form className="logonForm" onSubmit={formSubmit}>
             <h1> Faça seu logon </h1>
 
-            <input placeholder="Sua ID"/>
+            <input placeholder="Sua ID" onChange={changeId}/>
             <button type="submit" className="button">Entrar</button>
 
             <Link className="back-link" to="/register">
