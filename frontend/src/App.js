@@ -4,8 +4,6 @@ import Routes from './routes';
 import './styles.css'
 
 function App() {
-  let [counter, setCounter] = useState(0);
-
   return (
     <div>
       <Routes/>

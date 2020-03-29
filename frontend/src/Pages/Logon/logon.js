@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 
 import { API } from '../../Services';
 import { LogonForm } from './LogonForm';
-import { Aux } from '../../Hocs';
 
 import heroesImg from '../../Assets/heroes.png';
 import logoImg from '../../Assets/logo.svg';
