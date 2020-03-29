@@ -1,0 +1,16 @@
+.registerForm {
+    width: 100%;
+    max-width: 450px;
+}
+
+.registerForm input {
+    margin-top: 8px;
+}
+
+.inputGroup {
+    display: flex;
+}
+
+.inputGroup input + input {
+    margin-left: 8px;
+}
