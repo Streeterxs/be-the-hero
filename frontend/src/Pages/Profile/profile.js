@@ -28,6 +28,19 @@ const Profile = () => {
             setIncidents(response.data);
         });
     }, [ongId]); 
+
+    const handleDeleteIncident = async (id) => {
+        try {
+            API.delete(`incidents/${id}`, {
+                headers: {
+                    Authorization: ongId
+                }
+            });
+            setIncidents(incidents.filter(incident => incident.id !== id));
+        } catch (err) {
+            alert('Erro ao deletar caso, tente novamente');
+        }
+    };
     return (
         <div className="profile-container">
             <header>
@@ -39,7 +52,7 @@ const Profile = () => {
                 </button>
             </header>
             <h1>Casos Cadastrados</h1>
-            <IncidentList incidents={incidents}/>
+            <IncidentList incidents={incidents} incidentDeleteEvent={handleDeleteIncident}/>
         </div>
     );
 }
