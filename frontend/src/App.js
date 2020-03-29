@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Logon as Logon } from './Pages/Logon';
+import Routes from './routes';
 
 import './styles.css'
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <Logon/>
+      <Routes/>
     </div>
   );
 }
