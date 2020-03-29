@@ -16,7 +16,7 @@ const incidents = () => {
             <View style={IncidentsStyles.header}>
                 <Image source={logoImg}/>
                 <Text style={IncidentsStyles.headerText}>
-                    Total de <Text>0 casos</Text>.
+                    Total de <Text style={IncidentsStyles.headerTextBold}>0 casos</Text>.
                 </Text>
             </View>
             <Text style={IncidentsStyles.title}>Bem-vindo!</Text>
