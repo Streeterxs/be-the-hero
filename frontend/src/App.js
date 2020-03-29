@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
+import { Logon as Logon } from './Pages/Logon';
 
-import Header from './Header';
+import './styles.css'
 
 function App() {
   let [counter, setCounter] = useState(0);
 
   return (
     <div>
-      <Header>Contador: {counter}</Header>
-      <button onClick={()=>{setCounter(++counter);}}>Incrementador</button>
+      <Logon/>
     </div>
   );
 }

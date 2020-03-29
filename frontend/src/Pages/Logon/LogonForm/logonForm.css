@@ -1,0 +1,27 @@
+.logonForm {
+    margin-top: 100px;
+}
+
+.logonForm h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.logonForm a {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #41414d;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.logonForm a svg {
+    margin-right: 8px;
+}
+
+.logonForm a:hover {
+    opacity: 0.8;
+}
