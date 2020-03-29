@@ -1,0 +1,11 @@
+.newIncidentForm {
+    width: 100%;
+    max-width: 450px;
+}
+
+.newIncidentForm input {
+    margin-top: 8px;
+}
+.newIncidentForm textarea {
+    margin-top: 8px;
+}
