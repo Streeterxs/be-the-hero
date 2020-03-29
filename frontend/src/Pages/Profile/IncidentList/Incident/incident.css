@@ -1,0 +1,35 @@
+.incident {
+    background: #FFF;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.incident button {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    transition: opacity 0.2s;
+    background-color: transparent; /* Remoção do background-color: ButtonFace */
+}
+
+.incident button:hover {
+    opacity: 0.8;
+}
+
+.incident strong {
+    display: block;
+    margin-bottom: 16px;
+    color: #41414D;
+}
+
+.incident strong p + strong {
+    margin-top: 32px;
+} 
+
+.incident p {
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}

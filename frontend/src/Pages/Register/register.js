@@ -10,7 +10,7 @@ import './register.css';
 
 const register = () => {
     return (
-        <div className="register-container">
+        <div className="base-container">
             <div className="content">
                 <section>
                     <img src={logoImg} alt="Be The Hero"/>

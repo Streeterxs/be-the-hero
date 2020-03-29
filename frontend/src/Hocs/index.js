@@ -1,1 +1,1 @@
-export { Aux } from './Aux';
+export { Aux as Aux } from './Aux';
