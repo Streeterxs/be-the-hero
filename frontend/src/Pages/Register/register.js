@@ -1,14 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
+
+import { API } from '../../Services';
+import RegisterForm from './RegisterForm';
 
 import logoImg from '../../Assets/logo.svg';
 
-import RegisterForm from './RegisterForm';
-
 import './register.css';
 
-const register = () => {
+const Register = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [whatsapp, setWhatsapp] = useState('');
+    const [city, setCity] = useState('');
+    const [uf, setUf] = useState('');
+
+    const history = useHistory();
+
+    const handleRegister = async (event) => {
+        event.preventDefault();
+        const data = {name, email, whatsapp, city, uf};
+        try {
+            const response = await API.post('ongs', data);
+            alert(`Seu ID de acesso: ${response.data.id}`);
+            history.push('/');
+        } catch (err) {
+            alert(`Erro no cadastro, tente novamente`);
+        }
+    };
     return (
         <div className="base-container">
             <div className="content">
@@ -24,10 +44,16 @@ const register = () => {
                     </Link>
 
                 </section>
-                <RegisterForm/>
+                <RegisterForm
+                    formSubmit={handleRegister}
+                    changeName={(e) => setName(e.target.value)}
+                    changeEmail={(e) => setEmail(e.target.value)}
+                    changeWpp={(e) => setWhatsapp(e.target.value)}
+                    changeCity={(e) => setCity(e.target.value)}
+                    changeUf={(e) => setUf(e.target.value)}/>
             </div>
         </div>
     );
 }
 
-export default register;
+export default Register;
