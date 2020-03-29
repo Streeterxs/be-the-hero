@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {FiPower, FiTrash2} from 'react-icons/fi';
 
 import IncidentList from './IncidentList';
@@ -15,6 +15,7 @@ const Profile = () => {
     const ongId = localStorage.getItem('ongId');
 
     const [ incidents, setIncidents ] = useState([]);
+    const history = useHistory();
 
     // useEffect() recebe 2 parâmetros, o primeiro é qual função será executada,
     // o segundo é um array de dependências o qual executará a função selecionada toda vez que as dependências forem alteradas.
@@ -41,13 +42,19 @@ const Profile = () => {
             alert('Erro ao deletar caso, tente novamente');
         }
     };
+
+    const handleLogout = () => {
+        localStorage.clear();
+        history.push('/');
+    };
+
     return (
         <div className="profile-container">
             <header>
                 <img src={logoImg} alt="Be The Hero"/>
                 <span>Bem vinda, {ongName}</span>
                 <Link className="button" to="/incidents/new">Cadastrar novo caso</Link>
-                <button type="button">
+                <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="#E02041"/>
                 </button>
             </header>
